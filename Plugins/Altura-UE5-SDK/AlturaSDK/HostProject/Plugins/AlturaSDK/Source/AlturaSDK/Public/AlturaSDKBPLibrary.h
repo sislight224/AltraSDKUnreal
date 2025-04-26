@@ -525,8 +525,8 @@ class ALTURASDK_API UAlturaSDKBPLibrary : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "GetCollection", Keywords = "GetCollection"), Category = "AlturaSDK | Get Methods")
 	static void GetCollection(const FString Address, const FResponse& OnComplete);
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "GetCollections", Keywords = "GetCollections"), Category = "AlturaSDK | Get Methods")
-	static void GetCollections(const FString perPage, const FString page, const FString ownerAddress, SortBy SortBy, SortDir Sortdir, const FResponse& OnComplete);
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "GetCollectionsF", Keywords = "GetCollectionsF"), Category = "AlturaSDK | Get Methods")
+	static void GetCollections(const FString perPage, const FString pageE, const FString ownerAddress, SortBy SortBy, SortDir Sortdir, const FResponse& OnComplete);
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "GetUserItemBalance", Keywords = "GetUserItemBalance"), Category = "AlturaSDK | Get Methods")
 	static void GetUserItemBalance(const FString userAddress, const FString collectionAddress, const FString tokenId, const FString chainId, const FResponse& OnComplete);
