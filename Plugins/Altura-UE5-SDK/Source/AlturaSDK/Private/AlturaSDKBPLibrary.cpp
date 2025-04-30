@@ -44,6 +44,8 @@ FString UAlturaSDKBPLibrary::UserFilterEnumToString(UserFilter UserFilter)
 		return "";
 	case UserFilter::address:
 		return "address";
+	case UserFilter::holderAddress:
+		return "holderAddress";
 	case UserFilter::name:
 		return "name";
 	case UserFilter::bio:
@@ -668,6 +670,7 @@ TArray<FArraySingleItem> UAlturaSDKBPLibrary::ParseItems(const FString& JSONStri
 		FArraySingleItem Item;
 
 		Item.Name = GetStringFromJSONObject(ItemObject, "name");
+		Item.Description = GetStringFromJSONObject(ItemObject, "description");
 
 		TArray<FAlturaJSONObject> PropertiesArray = GetObjectArrayFromJSONObject(ItemObject, "properties");
 		for (const FAlturaJSONObject& PropertyObject : PropertiesArray)

@@ -214,8 +214,11 @@ struct FArraySingleItem
 {
 	GENERATED_BODY()
 
-		UPROPERTY(BlueprintReadWrite, Category = "Item")
+	UPROPERTY(BlueprintReadWrite, Category = "Item")
 		FString Name;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Item")
+		FString Description;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Item")
 		TArray<FItemProperty> Properties;
@@ -477,6 +480,7 @@ enum class UserFilter : uint8
 {
 	none,
 	address,
+	holderAddress,
 	name,
 	bio
 };
