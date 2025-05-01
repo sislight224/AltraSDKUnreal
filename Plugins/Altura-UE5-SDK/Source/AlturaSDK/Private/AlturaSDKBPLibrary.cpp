@@ -44,8 +44,6 @@ FString UAlturaSDKBPLibrary::UserFilterEnumToString(UserFilter UserFilter)
 		return "";
 	case UserFilter::address:
 		return "address";
-	case UserFilter::holderAddress:
-		return "holderAddress";
 	case UserFilter::name:
 		return "name";
 	case UserFilter::bio:
@@ -259,12 +257,13 @@ void UAlturaSDKBPLibrary::GetItem(const FString collection_address, const FStrin
 	MakeAHttpRequest(url, Params, TMap<FString, FString>(), FString(), OnComplete);
 
 }
-void UAlturaSDKBPLibrary::GetItems(const FString perPage, const FString page, SortBy SortBy, SortDir Sortdir,bool slim,const UserFilter userFilter,const FString FilterContext, const FResponse& OnComplete)
+void UAlturaSDKBPLibrary::GetItems(const FString perPage, const FString page, const FString holderAddress, SortBy SortBy, SortDir Sortdir,bool slim,const UserFilter userFilter,const FString FilterContext, const FResponse& OnComplete)
 {
 
 	TMap<FString, FString> Params;
 	Params.Add("perPage", perPage);
 	Params.Add("page", page);
+	Params.Add("holderAddress", holderAddress);
 	Params.Add("sortBy", SortbyEnumToString(SortBy));
 	Params.Add("sortDir", SortDirEnumToString(Sortdir));
 	Params.Add("slim", slim ? "true" : "false");

@@ -480,7 +480,6 @@ enum class UserFilter : uint8
 {
 	none,
 	address,
-	holderAddress,
 	name,
 	bio
 };
@@ -518,7 +517,7 @@ class ALTURASDK_API UAlturaSDKBPLibrary : public UBlueprintFunctionLibrary
 	static void GetItem(const FString Address, const FString TokenId, const FResponse& OnComplete);
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "GetItems", Keywords = "GetItems"), Category = "AlturaSDK | Get Methods")
-	static void GetItems(const FString perPage, const FString page, SortBy SortBy, SortDir Sortdir,bool slim,const UserFilter userFilter,const FString FilterContext, const FResponse& OnComplete);
+	static void GetItems(const FString perPage, const FString page, const FString holderAddress, SortBy SortBy, SortDir Sortdir,bool slim,const UserFilter userFilter,const FString FilterContext, const FResponse& OnComplete);
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "GetItemHolders", Keywords = "GetItemHolders"), Category = "AlturaSDK | Get Methods")
 	static void GetItemHolders(const FString Address, const FString TokenId,const FString perPage, const FString page, SortBy SortBy, SortDir Sortdir,bool includeListed, const FResponse& OnComplete);
